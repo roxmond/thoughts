@@ -29,12 +29,12 @@ export const NavBar = () => {
             <div className="menu-chat">
               <CiChat2  className='menu-item'/>
             </div>
-    
-            <div className="menu-profile">
-              <Link href='profile' >
-                <Image src='/profile-pic-1.png' width={46} height={46} alt="profile pic" className='menu-item'/>
-                </Link>
-            </div>
+            
+            <Link href='profile' >
+              <div className="menu-profile">
+                <Image src='/profile-pic-1.png' width={46} height={46} alt="profile pic" className='menu-item'/>  
+              </div>
+            </Link>
           </div>
         </div>
       )
