@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    background-color: #ffffff;
+    box-shadow: 0px 12px 12px 1px #3031353d;
+  }
+
+  .logo {
+    min-width: 134px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15px;
+  }
+
+  .menu-item {
+    min-width: 24px;
+    height: auto;
+    margin: 15px;
+    cursor: pointer;
+  }

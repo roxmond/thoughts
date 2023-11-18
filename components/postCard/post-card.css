@@ -1,0 +1,61 @@
+.post-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 95%;
+    border-radius: 5px;
+    margin: 15px;
+    background-color: var(--light);
+    box-shadow: 1px 2px 6px 1px #303135b0;
+  }
+
+  .post-body, .post-name, .post-actions {
+    margin: 10px;
+  }
+  
+  .post-body {
+    padding: 25px;
+  }
+  
+  .post-actions {
+    border-top: 1px solid #2324247e;
+  }
+  
+  .post-name {
+    border-bottom: 1px solid #2324247e;
+    padding-bottom: 15px;
+  }
+  .post-profile-pic {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .post-profile-name {
+    cursor: pointer;
+  }
+  
+  .post-date {
+    font-size: 12px;
+  }
+  
+  .post-button {
+    margin: 15px;
+    width: 22px;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .rotate {
+    rotate: 90deg;
+  }
+
+  .like:active {
+    color: green;
+    box-shadow: 0px 0px 4px 1px #00ff00ff;
+    border-radius: 99px;
+  }
+  
+  .deslike:active {
+    color: red;
+    box-shadow: 0px 0px 4px 1px #ff0000ff;
+    border-radius: 99px;
+  }
