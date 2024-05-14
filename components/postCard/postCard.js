@@ -55,11 +55,11 @@ export const PostCard = ({profileImg, account, date, time, post}) => {
         {post}
         </div>
 
-        <div className="post-actions flex justify-between">
-        <CiCircleChevUp className={`post-button ${likeColor}`} onClick={handleUpvote} />
-        <CiCircleChevDown className={`post-button ${dislikeColor}`} onClick={handleDownvote} />
-        <CiCircleMore className="post-button" onClick={handleCommentOpen} />
-            <CiSaveUp2 className="post-button rotate" />
+        <div className="post-actions flex">
+        <div className="flex items-center cursor-pointer" onClick={handleUpvote} ><CiCircleChevUp className={`post-button ${likeColor}`}/><p className="action-texts">Like</p></div>
+        <div className="flex items-center cursor-pointer" onClick={handleDownvote} ><CiCircleChevDown className={`post-button ${dislikeColor}`} /><p className="action-texts">Dislike</p></div>
+        <div className="flex items-center cursor-pointer" onClick={handleCommentOpen}><CiCircleMore className="post-button" /><p className="action-texts">Comment</p></div>
+        <div className="flex items-center cursor-pointer" ><CiSaveUp2 className="post-button rotate" /><p className="action-texts">Share</p></div>
 
         </div>
         {isCommentOpen && (
