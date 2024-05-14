@@ -1,33 +1,80 @@
+'use client'
 import Image from "next/image"
-import { CiCircleChevUp , CiCircleChevDown, CiCircleMore, CiSaveUp2 } from 'react-icons/ci'
+import { useState } from "react"
+import { CiCircleChevUp , CiCircleChevDown, CiCircleMore, CiSaveUp2, CiLocationArrow1 } from 'react-icons/ci'
 import '@/components/postCard/post-card.css'
 
-export const PostCard = () => {
- 
+export const PostCard = ({profileImg, account, date, time, post}) => {
+
+  const [isLiked, setIsLiked] = useState(false);
+  const [isDisliked, setIsDisliked] = useState(false);
+  const [isCommentOpen, setIsCommentOpen] = useState(false);
+  const [comment, setComment] = useState(""); 
+
+  const handleUpvote = () => {
+    setIsLiked(!isLiked);
+    setIsDisliked(false);
+  };
+
+  const handleDownvote = () => {
+    setIsDisliked(!isDisliked);
+    setIsLiked(false);
+  };
+
+  const handleCommentOpen = () => {
+    setIsCommentOpen(!isCommentOpen);
+  };
+
+  const handleCommentChange = (e) => {
+    setComment(e.target.value);
+  };
+
+  const handleCommentSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // Implement comment submission logic here (e.g., send comment to server)
+    console.log("Comment submitted:", comment);
+
+    setComment(""); // Clear comment after submission
+  };
+
+  const likeColor = isLiked ? 'green' : ''; // Remove "default"
+  const dislikeColor = isDisliked ? 'red' : ''; // Remove "default"
 
     return (
       <div className="post-card">
         <div className="post-name flex items-center">
-            <Image src='/profile-pic-2.png' width={42} height={42} alt="profile card pic" className="post-profile-pic" priority />
+            <Image src={profileImg} width={42} height={42} alt="profile card pic" className="post-profile-pic" priority />
             <div className="post-details">
-                <p className="post-profile-name">Teo Economidis</p>
-                <p className="post-date">25/12/2023 - 12:11PM</p>
+                <p className="post-profile-name">{account}</p>
+                <p className="post-date">{date} - {time}</p>
             </div>
         </div>
 
         <div className="post-body">
-        🎵 We wish you a merry Christmas!
-        We wish you a merry Christmas!
-        We wish you a merry Christmas and a Happy New Year! 🎵🎄
+        {post}
         </div>
 
         <div className="post-actions flex justify-between">
-            <CiCircleChevUp className="post-button like"/>
-            <CiCircleChevDown className="post-button deslike" />
-            <CiCircleMore className="post-button" />
+        <CiCircleChevUp className={`post-button ${likeColor}`} onClick={handleUpvote} />
+        <CiCircleChevDown className={`post-button ${dislikeColor}`} onClick={handleDownvote} />
+        <CiCircleMore className="post-button" onClick={handleCommentOpen} />
             <CiSaveUp2 className="post-button rotate" />
 
         </div>
+        {isCommentOpen && (
+        <div className="comment-section">
+          <textarea
+            className="new-comment"
+            placeholder="Write a comment..."
+            value={comment}
+            onChange={handleCommentChange}
+          />
+          
+          <CiLocationArrow1  type='submit' className='post-comment-icon'  onClick={handleCommentSubmit}/>
+          
+        </div>
+      )}
       </div>
       )
     }

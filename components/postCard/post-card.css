@@ -1,7 +1,7 @@
 .post-card {
     display: flex;
     flex-direction: column;
-    max-width: 95%;
+    min-width: 95%;
     border-radius: 5px;
     margin: 15px;
     background-color: var(--light);
@@ -42,20 +42,51 @@
     width: 22px;
     height: auto;
     cursor: pointer;
+
   }
 
   .rotate {
     rotate: 90deg;
   }
 
-  .like:active {
+  .green {
     color: green;
-    box-shadow: 0px 0px 4px 1px #00ff00ff;
+    box-shadow: 0px 0px 10px 3px #00ff00ff;
     border-radius: 99px;
   }
   
-  .deslike:active {
+  .red {
     color: red;
-    box-shadow: 0px 0px 4px 1px #ff0000ff;
+    box-shadow: 0px 0px 10px 3px #ff0000ff;
     border-radius: 99px;
+  }
+
+  .comment-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .new-comment {
+    border: var(--base) 1px solid;
+    background-color: #fafafa;
+    border-radius: 10px;
+    padding: 9px;
+    margin: -12px 12px 12px 12px;
+    resize: none;
+    min-width: 83vw;
+  }
+
+  .post-comment-icon {
+    cursor: pointer;
+    margin: -12px 6px 12px 0;
+    width: 24px;
+    height: auto;
+  }
+
+  .comment-submit {
+    cursor: pointer;
+    margin: -12px 6px 12px 0;
+    width: 24px;
+    height: auto;
   }
