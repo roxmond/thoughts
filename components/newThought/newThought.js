@@ -13,7 +13,7 @@ export const NewThought = () => {
                         cols="50"
                         className='new-thought'
                         form="newThought"
-                        defaultValue='Write your thoughts...'
+                        placeholder="Write your thoughts..."
               />
           
               <CiLocationArrow1  type='submit' className='post-icon'/>

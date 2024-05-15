@@ -55,7 +55,7 @@ export const PostCard = ({profileImg, account, date, time, post}) => {
         {post}
         </div>
 
-        <div className="post-actions flex">
+        <div className="post-actions flex justify-between">
         <div className="flex items-center cursor-pointer" onClick={handleUpvote} ><CiCircleChevUp className={`post-button ${likeColor}`}/><p className="action-texts">Like</p></div>
         <div className="flex items-center cursor-pointer" onClick={handleDownvote} ><CiCircleChevDown className={`post-button ${dislikeColor}`} /><p className="action-texts">Dislike</p></div>
         <div className="flex items-center cursor-pointer" onClick={handleCommentOpen}><CiCircleMore className="post-button" /><p className="action-texts">Comment</p></div>

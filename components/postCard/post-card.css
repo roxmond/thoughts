@@ -17,13 +17,13 @@
   }
   
   .post-actions {
-    
+    max-width: 95%;
     border-top: 1px solid #2324247e;
     align-items: center;
   
   }
   .action-texts {
-    margin-right: 70px
+    margin-right: 0px
   }
   .post-name {
     border-bottom: 1px solid #2324247e;
