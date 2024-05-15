@@ -10,6 +10,8 @@ export const PostCard = ({profileImg, account, date, time, post}) => {
   const [isDisliked, setIsDisliked] = useState(false);
   const [isCommentOpen, setIsCommentOpen] = useState(false);
   const [comment, setComment] = useState(""); 
+  const [isShareOpen, setIsShareOpen] = useState(false);
+  const [share, setShare] = useState(""); 
 
   const handleUpvote = () => {
     setIsLiked(!isLiked);
@@ -20,8 +22,23 @@ export const PostCard = ({profileImg, account, date, time, post}) => {
     setIsDisliked(!isDisliked);
     setIsLiked(false);
   };
+  const handleShareOpen = () => {
+    // Close comment section if open before opening share section
+    if (isCommentOpen) {
+      setIsCommentOpen(false);
+    }
+    setIsShareOpen(!isShareOpen);
+  };
+
+  const handleShareChange = (e) => {
+    setShare(e.target.value);
+  };
 
   const handleCommentOpen = () => {
+    // Close share section if open before opening comment section
+    if (isShareOpen) {
+      setIsShareOpen(false);
+    }
     setIsCommentOpen(!isCommentOpen);
   };
 
@@ -59,7 +76,7 @@ export const PostCard = ({profileImg, account, date, time, post}) => {
         <div className="flex items-center cursor-pointer" onClick={handleUpvote} ><CiCircleChevUp className={`post-button ${likeColor}`}/><p className="action-texts">Like</p></div>
         <div className="flex items-center cursor-pointer" onClick={handleDownvote} ><CiCircleChevDown className={`post-button ${dislikeColor}`} /><p className="action-texts">Dislike</p></div>
         <div className="flex items-center cursor-pointer" onClick={handleCommentOpen}><CiCircleMore className="post-button" /><p className="action-texts">Comment</p></div>
-        <div className="flex items-center cursor-pointer" ><CiSaveUp2 className="post-button rotate" /><p className="action-texts">Share</p></div>
+        <div className="flex items-center cursor-pointer" onClick={handleShareOpen}><CiSaveUp2 className="post-button rotate" /><p className="action-texts">Share</p></div>
 
         </div>
         {isCommentOpen && (
@@ -73,7 +90,18 @@ export const PostCard = ({profileImg, account, date, time, post}) => {
           
           <CiLocationArrow1  type='submit' className='post-comment-icon'  onClick={handleCommentSubmit}/>
           
-        </div>
+        </div> )}
+{isShareOpen && (
+  <div className="share-section flex justify-between items-center">
+    <div className="share1"></div>
+    <div className="share1"></div>
+    <div className="share1"></div>
+    <div className="share1"></div>
+    
+    <CiSaveUp2 className="post-share-icon rotate"/>
+    
+  </div>
+        
       )}
       </div>
       )

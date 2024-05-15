@@ -61,7 +61,7 @@ body {
 .top-arrow {
   width: 32px;
   height: auto;
-  color: var(--ascent);
+  color: #f6fafa;
   background-color: var(--base);
   border-radius: 100px;
   box-shadow: 0px 0px 4px 1px var(--base);

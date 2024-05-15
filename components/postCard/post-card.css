@@ -95,3 +95,22 @@
     width: 24px;
     height: auto;
   }
+
+  .share1 {
+    width: 36px;
+    height: 36px;
+    border-radius: 99px;
+    border: 1px solid black;
+    margin: 0 25px 0 25px;
+  }
+
+  .post-share-icon {
+    cursor: pointer;
+    margin: -0 25px 0 0;
+    width: 24px;
+    height: auto;
+  }
+
+  .share-section {
+    margin-bottom: 25px;
+  }
